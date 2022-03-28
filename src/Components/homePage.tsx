@@ -170,7 +170,9 @@ function HomePage() {
           createDate: moment(element.createDate).format("ll"),
           person: element.person.username,
           personModified: element?.personModified?.username || "",
-          dateModified: moment(element.dateModified).format("ll") || "",
+          dateModified: element.dateModified
+            ? moment(element.dateModified).format("ll")
+            : "",
           isModifiedReceipt: element.isModifiedReceipt ? "Si" : "No",
           peso: element?.peso && element?.peso > 0 ? element?.peso : "",
           unitPrice:
